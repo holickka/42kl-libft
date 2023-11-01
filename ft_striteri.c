@@ -1,35 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 17:17:03 by hsim              #+#    #+#             */
-/*   Updated: 2023/10/27 17:17:04 by hsim             ###   ########.fr       */
+/*   Created: 2023/10/27 20:30:53 by hsim              #+#    #+#             */
+/*   Updated: 2023/10/27 20:30:54 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	if (c >= 65 && c <= 90)
-		c += 32;
-	else if (c >= 0101 && c <= 0132)
-		c -= 4;
-	return (c);
+	unsigned int	i;
+
+	i = -1;
+	if (*s && *f)
+	{
+		while (s[++i])
+			f(i, &s[i]);
+	}
 }
 /*
-#include <ctype.h>
+void	ft_uppercase(unsigned int n, char *s)
+{
+	if(s[n] >= 'a' && s[n] <= 'z')
+		s[n] = s[n] - 'a' + 'A';
+}
 #include <stdio.h>
-
 int	main()
 {
-	printf("%d\n", ft_tolower(3));
+	char c[] = "hellow";
+	ft_striteri(c, &ft_uppercase);
+	printf("%s\n", c);
 }
 */
 /*
- notes
- if enter octal, return decimal ascii
- */
+|notes|
+applies function f on each char s
+*/

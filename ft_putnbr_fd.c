@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 17:17:03 by hsim              #+#    #+#             */
-/*   Updated: 2023/10/27 17:17:04 by hsim             ###   ########.fr       */
+/*   Created: 2023/10/27 20:33:16 by hsim              #+#    #+#             */
+/*   Updated: 2023/10/27 20:33:22 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (c >= 65 && c <= 90)
-		c += 32;
-	else if (c >= 0101 && c <= 0132)
-		c -= 4;
-	return (c);
+	long	nlong;
+
+	nlong = (long)n;
+	if (nlong < 0)
+	{
+		nlong *= -1;
+		ft_putchar_fd('-', fd);
+	}
+	if (nlong >= 10)
+	{
+		ft_putnbr_fd(nlong / 10, fd);
+		ft_putnbr_fd(nlong % 10, fd);
+	}
+	if (nlong >= 0 && nlong <= 9)
+	{
+		nlong += '0';
+		ft_putchar_fd(nlong, fd);
+	}
 }
 /*
-#include <ctype.h>
-#include <stdio.h>
-
 int	main()
 {
-	printf("%d\n", ft_tolower(3));
+	ft_putnbr_fd(-2147483648, 1);
 }
 */
-/*
- notes
- if enter octal, return decimal ascii
- */

@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/27 17:10:30 by hsim              #+#    #+#             */
+/*   Updated: 2023/10/27 17:10:57 by hsim             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
 
-void *ft_memmove(void *dest, const void *src, size_t len)
+void	*ft_memmove(void *dest, const void *src, size_t len)
 {
 	unsigned long	i;
 
@@ -21,11 +33,10 @@ void *ft_memmove(void *dest, const void *src, size_t len)
 			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
 			i++;
 		}
-
 	}
 	return (dest);
 }
-
+/*
 #include <string.h>
 #include <stdio.h>
 
@@ -35,7 +46,7 @@ int	main()
 	ft_memmove(c, c + 5, 3);
 	printf("%s\n", c);
 }
-
+*/
 /*
  copy len bytes from src to dest
  returns dest

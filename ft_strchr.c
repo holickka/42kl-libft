@@ -1,35 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 17:17:03 by hsim              #+#    #+#             */
-/*   Updated: 2023/10/27 17:17:04 by hsim             ###   ########.fr       */
+/*   Created: 2023/10/27 17:24:53 by hsim              #+#    #+#             */
+/*   Updated: 2023/10/27 17:25:04 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-int	ft_tolower(int c)
+char	*ft_strchr(const char *s, int c)
 {
-	if (c >= 65 && c <= 90)
-		c += 32;
-	else if (c >= 0101 && c <= 0132)
-		c -= 4;
-	return (c);
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == (unsigned char)c)
+			return ((char *)&s[i]);
+		i++;
+	}
+	return (NULL);
 }
 /*
-#include <ctype.h>
 #include <stdio.h>
+#include <string.h>
 
 int	main()
 {
-	printf("%d\n", ft_tolower(3));
+	int a = 42;
+	printf("%c\n", (unsigned char)a);
+	printf("%s\n", strchr("abcdef+0ghijkl", 43));
 }
 */
 /*
- notes
- if enter octal, return decimal ascii
- */
+locates 1st occurence of c (converted to char)
+return pointer to the char,
+or NULL if not found
+*/

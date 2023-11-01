@@ -1,50 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 17:02:46 by hsim              #+#    #+#             */
-/*   Updated: 2023/10/27 17:02:47 by hsim             ###   ########.fr       */
+/*   Created: 2023/10/27 17:06:06 by hsim              #+#    #+#             */
+/*   Updated: 2023/10/27 17:06:12 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*ptr;
-	unsigned long	i;
+	size_t			i;
+	unsigned char	*temp;
 
-	ptr = (unsigned char *)b;
+	temp = (unsigned char *)s;
 	i = 0;
-	while (i < len)
-		ptr[i++] = c;
-	return (b);
+	while (i < n)
+		temp[i++] = 0;
 }
 /*
-#include <string.h>
 #include <stdio.h>
-
+#include <strings.h>
 int	main()
 {
-	int i;
+	int	i;
+	int	n;
+//	int	x[] = {10, 10, 9};
+	char	x[] = "what";
 
 	i = 0;
-//	char str[10] = "what is";
-	int str[10] = {-10, -10, 19};
-	ft_memset(&str[1], 0, 3 * sizeof(int));
-//	memset(str, 'x', sizeof(str));
-	while (i < 3)
-		printf("%d\n", str[i++]);
+	n = 2;
+	ft_bzero(x, n * sizeof(char));
+	while (i <= n)
+		printf("%d\n", x[i++]);
 }
 */
 /*
 |notes|
-initialize entire string with same char
-replace string partially
-replace what is in b to c
-does not handle overflow
+write n number of 0 to s
+(eg n = 5, 0 0 0 0 0)
+if n = 0, does nothing
+
+when n > sizeof (*s)
+continue write until segfault
+
+didnt include temp[i] in while loop
+cz it changes temp to 0
+which faults the condition
 */

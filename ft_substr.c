@@ -1,48 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 17:11:46 by hsim              #+#    #+#             */
-/*   Updated: 2023/10/27 17:11:47 by hsim             ###   ########.fr       */
+/*   Created: 2023/10/27 20:16:59 by hsim              #+#    #+#             */
+/*   Updated: 2023/10/27 20:17:22 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
+	char			*tab;
+	unsigned int	i;
 
 	i = 0;
-	while (src[i] && i < n - 1)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	if (n != 0)
-		dest[i] = '\0';
-	return (ft_strlen(src));
+	tab = (char *)malloc((len + 1) * sizeof(char));
+	if (tab == NULL)
+		return (NULL);
+	while (i < len)
+		tab[i++] = ((char *)s)[start++];
+	tab[i] = '\0';
+	return (tab);
 }
 /*
 #include <stdio.h>
-#include <string.h>
-
 int	main()
 {
-	char dest[11] = "kiki";
-	char source[] = "";
-	int n = 2;
-	printf("%lu\n", ft_strlcpy(dest, source, n));
+	char c[] = "Melloe";
+	char *dest;
+	dest = ft_substr(c, 2, 3);
 	printf("%s\n", dest);
 }
 */
 /*
- copy strings up to n and NUL terminate if there is room
- n include NULL
- return strlen(src)
- do not handle overflow, will segfault
-*/
+ create newstr from s[start] to s[len], return newstr
+ i assume len doesnt include '\0'
+ if allocation fail, return NULL
+ */

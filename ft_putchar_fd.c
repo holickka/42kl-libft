@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 17:17:03 by hsim              #+#    #+#             */
-/*   Updated: 2023/10/27 17:17:04 by hsim             ###   ########.fr       */
+/*   Created: 2023/10/27 20:31:35 by hsim              #+#    #+#             */
+/*   Updated: 2023/10/27 20:31:36 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	if (c >= 65 && c <= 90)
-		c += 32;
-	else if (c >= 0101 && c <= 0132)
-		c -= 4;
-	return (c);
+	write(fd, &c, 1);
 }
 /*
-#include <ctype.h>
-#include <stdio.h>
-
 int	main()
 {
-	printf("%d\n", ft_tolower(3));
+	char c = 'a';
+	ft_putchar_fd(c, 1);
 }
 */
 /*
- notes
- if enter octal, return decimal ascii
- */
+|note|
+file descriptor
+0 = read from stdin (read input frpm keyboard)
+1 = write to stdout (output to video screen)
+2 = write to stderror
+*/

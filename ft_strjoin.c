@@ -1,35 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 17:17:03 by hsim              #+#    #+#             */
-/*   Updated: 2023/10/27 17:17:04 by hsim             ###   ########.fr       */
+/*   Created: 2023/10/27 20:17:40 by hsim              #+#    #+#             */
+/*   Updated: 2023/10/27 20:18:27 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-int	ft_tolower(int c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	if (c >= 65 && c <= 90)
-		c += 32;
-	else if (c >= 0101 && c <= 0132)
-		c -= 4;
-	return (c);
+	int		i;
+	char	*tab;
+
+	i = 0;
+	tab = (char *)malloc(sizeof(s1) - sizeof(char) + sizeof(s2));
+	if (tab == NULL)
+		return (NULL);
+	while (*s1)
+		tab[i++] = *s1++;
+	while (*s2)
+		tab[i++] = *s2++;
+	return (tab);
 }
 /*
-#include <ctype.h>
 #include <stdio.h>
 
 int	main()
 {
-	printf("%d\n", ft_tolower(3));
+	char s1[] = "Bello";
+	char s2[] = "ocea";
+	printf("%s\n", ft_strjoin(s1, s2));
 }
 */
 /*
- notes
- if enter octal, return decimal ascii
- */
+|note|
+allocation fail, return NULL
+allocation success, return string s1 + s2 (concatenate)
+*/

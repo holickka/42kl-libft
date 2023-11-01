@@ -1,48 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 17:11:46 by hsim              #+#    #+#             */
-/*   Updated: 2023/10/27 17:11:47 by hsim             ###   ########.fr       */
+/*   Created: 2023/10/27 19:59:26 by hsim              #+#    #+#             */
+/*   Updated: 2023/10/27 19:59:27 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+#include <unistd.h>
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t n)
+void	*ft_calloc(size_t count, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*tab;
 
 	i = 0;
-	while (src[i] && i < n - 1)
+	tab = (unsigned char *)malloc(count * n);
+	if (tab != NULL)
 	{
-		dest[i] = src[i];
-		i++;
+		while (i < count * n)
+			tab[i++] = 0;
+		return (tab);
 	}
-	if (n != 0)
-		dest[i] = '\0';
-	return (ft_strlen(src));
+	return (NULL);
 }
 /*
 #include <stdio.h>
-#include <string.h>
-
 int	main()
 {
-	char dest[11] = "kiki";
-	char source[] = "";
-	int n = 2;
-	printf("%lu\n", ft_strlcpy(dest, source, n));
-	printf("%s\n", dest);
+	int	*arr;
+	int	i;
+	int	n;
+
+	n = -2147483647;
+	i = 0;
+	arr = (int *)ft_calloc(n, sizeof(int));
+	while(i < n)
+		printf("%d ", arr[i++]);
 }
 */
 /*
- copy strings up to n and NUL terminate if there is room
- n include NULL
- return strlen(src)
- do not handle overflow, will segfault
-*/
+ allocate space for block count in byte size as defined in n
+ allocated mem is filled with bytes val of 0
+ */

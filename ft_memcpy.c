@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/27 17:09:28 by hsim              #+#    #+#             */
+/*   Updated: 2023/10/27 17:09:29 by hsim             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
 
@@ -17,10 +29,9 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-
+/*
 #include <stdio.h>
 #include <string.h>
-
 int	main()
 {
 	char dest[10] = "abcdefghi";
@@ -31,6 +42,7 @@ int	main()
 	ft_memcpy(dest, src, n);
 	printf("%s\n", dest);
 }
+*/
 /*
  |notes|
  copy n bytes from src to dest

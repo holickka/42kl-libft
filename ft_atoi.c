@@ -1,35 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 17:17:03 by hsim              #+#    #+#             */
-/*   Updated: 2023/10/27 17:17:04 by hsim             ###   ########.fr       */
+/*   Created: 2023/10/27 17:45:10 by hsim              #+#    #+#             */
+/*   Updated: 2023/10/27 17:45:11 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+int	ft_atoi(const char *str)
 {
-	if (c >= 65 && c <= 90)
-		c += 32;
-	else if (c >= 0101 && c <= 0132)
-		c -= 4;
-	return (c);
+	int	i;
+	int	neg;
+	int	num;
+
+	i = 0;
+	num = 0;
+	neg = 1;
+	while (str[i] == ' ')
+		str++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			neg *= -1;
+		str++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		num = (num * 10) + (str[i] - '0');
+		i++;
+	}
+	if (neg != 1)
+		num *= neg;
+	return (num);
 }
 /*
-#include <ctype.h>
+#include <stdlib.h>
 #include <stdio.h>
 
 int	main()
 {
-	printf("%d\n", ft_tolower(3));
+	printf("%d\n", ft_atoi("  -12whatisit"));
 }
 */
 /*
- notes
- if enter octal, return decimal ascii
+ convert int string to int
  */

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/27 17:12:45 by hsim              #+#    #+#             */
+/*   Updated: 2023/10/27 17:15:02 by hsim             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
 
@@ -7,11 +19,11 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n)
 	size_t	destlen;
 	char	*oridest;
 
-	destlen = ft_strlen(dest); 
+	destlen = ft_strlen(dest);
 	oridest = dest;
 	i = 0;
 	if (n >= 0 && n < ft_strlen(dest))
-			return (n + ft_strlen(src));
+		return (n + ft_strlen(src));
 	if (n < 0)
 		n = ft_strlen(src) + ft_strlen(dest);
 	while (dest[i])
@@ -22,10 +34,10 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n)
 		i++;
 	}
 	if (src[i] && n != 0)
-		dest[i] = '\0';	
+		dest[i] = '\0';
 	return (ft_strlen(src) + destlen);
 }
-
+/*
 #include <string.h>
 #include <stdio.h>
 int	main()
@@ -35,7 +47,7 @@ int	main()
 	printf("%lu\n", ft_strlcat(dest, src, -1));
 	printf("%s\n", dest);
 }
-
+*/
 /*
  |note|
  concatenates src to dest size >= dest
