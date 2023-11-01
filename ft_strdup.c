@@ -6,30 +6,21 @@
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:36:29 by hsim              #+#    #+#             */
-/*   Updated: 2023/10/05 16:36:30 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/01 19:46:14 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 #include <errno.h>
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	int		i;
 	char	*dest;
 
 	i = 0;
-	dest = (char *)malloc(ft_strlen(src) + 1);
+	dest = (char *)malloc((ft_strlen(src) + 1) * sizeof(char));
 	if (dest != NULL)
 	{
 		while (src[i] != '\0')

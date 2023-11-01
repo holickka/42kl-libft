@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/01 21:07:58 by hsim              #+#    #+#             */
+/*   Updated: 2023/11/01 21:07:59 by hsim             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
-#define LIBFT_H
-#include <stdlib.h>
-#include <unistd.h>
+# define LIBFT_H
+# include <stdlib.h>
+# include <unistd.h>
 
 int				ft_isalpha(int a);
 int				ft_isdigit(int b);
@@ -31,8 +43,8 @@ char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s1, char const *set);
 char			**ft_split(char const *s, char c);
 char			*ft_itoa(int n);
-char			*ft_strmapi(char const *s, char(*f)(unsigned int, char));
-void			ft_striteri(char *s, void(*f)(unsigned int, char*));
+char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void			ft_striteri(char *s, void (*f)(unsigned int, char*));
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);

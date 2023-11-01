@@ -6,7 +6,7 @@
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 17:24:53 by hsim              #+#    #+#             */
-/*   Updated: 2023/10/27 17:25:04 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/01 20:28:15 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	int		i;
 
 	i = 0;
 	while (s[i])
@@ -24,6 +24,8 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)&s[i]);
 		i++;
 	}
+	if (c == '\0')
+		return ((char *)&s[i]);
 	return (NULL);
 }
 /*
@@ -34,7 +36,7 @@ int	main()
 {
 	int a = 42;
 	printf("%c\n", (unsigned char)a);
-	printf("%s\n", strchr("abcdef+0ghijkl", 43));
+	printf("%s\n", ft_strchr("abcdef+0ghijkl", 0));
 }
 */
 /*

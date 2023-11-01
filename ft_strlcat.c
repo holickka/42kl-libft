@@ -6,7 +6,7 @@
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 17:12:45 by hsim              #+#    #+#             */
-/*   Updated: 2023/10/27 17:15:02 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/01 19:29:21 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n)
 		dest[i] = src[i];
 		i++;
 	}
-	if (src[i] && n != 0)
+	if (n != 0)
 		dest[i] = '\0';
 	return (ft_strlen(src) + destlen);
 }

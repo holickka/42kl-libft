@@ -6,7 +6,7 @@
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 17:11:46 by hsim              #+#    #+#             */
-/*   Updated: 2023/10/27 17:11:47 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/01 19:22:29 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 	size_t	i;
 
 	i = 0;
-	while (src[i] && i < n - 1)
+	while (src[i] && i + 1 < n)
 	{
 		dest[i] = src[i];
 		i++;
