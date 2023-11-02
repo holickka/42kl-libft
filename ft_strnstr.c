@@ -19,12 +19,14 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	size_t	x;
 
 	i = 0;
+	if (!*to_find)
+		return ((char *)str);
 	while (str[i] && i < len)
 	{
 		if (str[i] == to_find[0])
 		{
 			x = 0;
-			while (str[i + x] && str[i + x] == to_find[x])
+			while (str[i + x] && str[i + x] == to_find[x] && i + x < len)
 				x++;
 			if (to_find[x] == '\0')
 				return ((char *)&str[i]);
@@ -39,7 +41,7 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 
 int	main()
 {
-	printf("%s\n", strnstr("abbbbbbbd+as", "bbbbbbd", 15));
+	printf("%s\n", ft_strnstr("abbbbbbbd+as", "bd+as", 9));
 }
 */
 /*
