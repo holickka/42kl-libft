@@ -6,7 +6,7 @@
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 20:16:59 by hsim              #+#    #+#             */
-/*   Updated: 2023/10/27 20:17:22 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/03 21:51:09 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	tab = (char *)malloc((len + 1) * sizeof(char));
 	if (tab == NULL)
 		return (NULL);
-	while (i < len)
-		tab[i++] = ((char *)s)[start++];
+	if (start <= ft_strlen(s))
+	{
+		while (i < len && s[start])
+			tab[i++] = ((char *)s)[start++];
+	}
 	tab[i] = '\0';
 	return (tab);
 }
@@ -33,7 +36,7 @@ int	main()
 {
 	char c[] = "Melloe";
 	char *dest;
-	dest = ft_substr(c, 2, 3);
+	dest = ft_substr(c, 2, 20);
 	printf("%s\n", dest);
 }
 */
