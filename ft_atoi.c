@@ -6,7 +6,7 @@
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 17:45:10 by hsim              #+#    #+#             */
-/*   Updated: 2023/10/27 17:45:11 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/03 20:47:41 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_atoi(const char *str)
 	i = 0;
 	num = 0;
 	neg = 1;
-	while (str[i] == ' ')
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		str++;
 	if (str[i] == '-' || str[i] == '+')
 	{
@@ -44,7 +44,7 @@ int	ft_atoi(const char *str)
 
 int	main()
 {
-	printf("%d\n", ft_atoi("  -12whatisit"));
+	printf("%d\n", ft_atoi(" \n\n\n  -46\b9 \n5d6"));
 }
 */
 /*
