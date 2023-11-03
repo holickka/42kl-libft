@@ -6,7 +6,7 @@
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 17:27:02 by hsim              #+#    #+#             */
-/*   Updated: 2023/11/03 20:23:50 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/03 20:33:35 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,8 @@ int	main()
 	printf("%d\n", ft_strncmp("banana", "baza", 0));
 }
 */
+/*
+ |note|
+ use of unsigned char is for treating each 'char'
+ as a unsigned value during comparison
+ */
