@@ -6,13 +6,12 @@
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:36:29 by hsim              #+#    #+#             */
-/*   Updated: 2023/11/01 19:46:14 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/04 17:41:51 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-#include <errno.h>
 
 char	*ft_strdup(const char *src)
 {
@@ -30,11 +29,6 @@ char	*ft_strdup(const char *src)
 		}
 		dest[i] = '\0';
 		return (dest);
-	}
-	else
-	{
-		errno = ENOMEM;
-		return (NULL);
 	}
 }
 /*
