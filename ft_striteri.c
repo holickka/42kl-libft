@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
+/*   By: hsim <hsim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 20:30:53 by hsim              #+#    #+#             */
-/*   Updated: 2023/10/27 20:30:54 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/04 20:03:17 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
 
+	if (!s || !f)
+		return;
 	i = -1;
 	if (*s && *f)
 	{
