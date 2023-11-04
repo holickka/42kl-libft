@@ -6,47 +6,32 @@
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 20:20:08 by hsim              #+#    #+#             */
-/*   Updated: 2023/10/27 20:20:09 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/04 17:29:51 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_last(char const *s1, char const *set)
-{
-	size_t	lenstr;
-	size_t	lenset;
-
-	lenstr = ft_strlen(s1);
-	lenset = ft_strlen(set);
-	while (lenstr > 0 && s1[lenstr] == set[lenset])
-	{
-		lenstr--;
-		lenset--;
-	}
-	return (lenstr);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
 	int		a;
+	int		x;
 	char	*tab;
 
-	i = 0;
 	a = 0;
-	while (s1[i] && s1[i] == set[i])
-		i++;
-	if (is_last(s1, set) != 0)
+	x = 0;
+	while (*s1 && ft_strchr(set, s1[0]))
+		s1++;
+	x = ft_strlen(s1);
+	while (*s1 && ft_strrchr(set, s1[x - 1]))
+		x--;
+	tab = (char *)malloc((x + 1) * sizeof(char));
+	if (tab != NULL)
 	{
-		tab = (char *)malloc(sizeof(s1));
-		if (tab != NULL)
-		{
-			while (i <= is_last(s1, set))
-				tab[a++] = s1[i++];
-			tab[a] = '\0';
-			return (tab);
-		}
+		while (a < x)
+			tab[a++] = *s1++;
+		tab[a] = '\0';
+		return (tab);
 	}
 	return (NULL);
 }
@@ -54,7 +39,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 #include <stdio.h>
 int	main()
 {
-	printf("%s\n", ft_strtrim("i", "i"));
+	printf("%s\n", ft_strtrim("+-saw++awwa++asd-+", "+-"));
 }
 */
 /*
