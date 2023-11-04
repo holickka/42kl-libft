@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hsim <hsim@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/04 19:12:48 by hsim              #+#    #+#             */
+/*   Updated: 2023/11/04 19:48:49 by hsim             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
@@ -12,16 +24,14 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		free(temp);
 	}
 }
-
+/*
+#include <stdio.h>
+#include <string.h>
+int	ft_lstsize(t_list *lst);
 void	ft_del(void *myList)
 {
 	free(myList);
 }
-
-int	ft_lstsize(t_list *lst);
-
-#include <stdio.h>
-#include <string.h>
 int	main()
 {
 	t_list	*mylst1;
@@ -42,3 +52,4 @@ int	main()
 	ft_lstclear(&mylst1, &ft_del);
 	printf("%d\n", ft_lstsize(mylst1));
 }
+*/

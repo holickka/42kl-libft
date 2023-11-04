@@ -1,6 +1,16 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hsim <hsim@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/04 19:07:36 by hsim              #+#    #+#             */
+/*   Updated: 2023/11/04 19:32:15 by hsim             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_lstsize(t_list *lst);
+#include "libft.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
@@ -20,8 +30,9 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		new->next = NULL;
 	}
 }
-
+/*
 #include <stdio.h>
+int	ft_lstsize(t_list *lst);
 int	main()
 {
 	t_list	*mylst1;
@@ -33,3 +44,4 @@ int	main()
 
 	printf("%d\n", ft_lstsize(mylst1));
 }
+*/

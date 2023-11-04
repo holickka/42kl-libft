@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hsim <hsim@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/04 19:13:00 by hsim              #+#    #+#             */
+/*   Updated: 2023/11/04 19:51:08 by hsim             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
 
@@ -7,15 +19,14 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	lst->next = NULL;
 	free(lst);
 }
-
+/*
+#include <stdio.h>
+#include <string.h>
+int	ft_lstsize(t_list *lst);
 void	ft_del(void *myList)
 {
 	free(myList);
 }
-
-int	ft_lstsize(t_list *lst);
-#include <stdio.h>
-#include <string.h>
 int	main()
 {
 	t_list	*mylst1;
@@ -36,3 +47,4 @@ int	main()
 	ft_lstdelone(mylst2, &ft_del);
 	printf("%d\n",ft_lstsize(mylst1));
 }
+*/

@@ -1,8 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hsim <hsim@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/04 19:13:05 by hsim              #+#    #+#             */
+/*   Updated: 2023/11/04 19:18:35 by hsim             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-t_list *ft_lstnew(void *content);
-
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*temp;
 	t_list	*newlst;
@@ -33,9 +43,12 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (newlst);
 }
+/*
 #include <string.h>
 #include <stdio.h>
-void	ft_del(void *mylst)
+void	ft_del(void *mylst);
+t_list	*ft_lstnew(void *content);
+
 {
 	free(mylst);
 }
@@ -74,3 +87,4 @@ int	main()
 	ft_lstmap(mylst1, &ft_write, &ft_del);
 	ft_lstprint(mylst1);
 }
+*/
