@@ -6,7 +6,7 @@
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 17:10:30 by hsim              #+#    #+#             */
-/*   Updated: 2023/10/27 17:10:57 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/04 17:53:46 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	unsigned long	i;
 
 	i = 0;
+	if (!dest || !src)
+		return (NULL);
 	if (src < dest)
 	{
 		while (len > 0)
