@@ -6,7 +6,7 @@
 /*   By: hsim <hsim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 19:14:33 by hsim              #+#    #+#             */
-/*   Updated: 2023/11/04 20:12:16 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/04 21:25:43 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!lst || !f)
-		return;
+		return ;
 	while (lst)
 	{
 		f(lst->content);

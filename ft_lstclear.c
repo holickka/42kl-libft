@@ -6,7 +6,7 @@
 /*   By: hsim <hsim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 19:12:48 by hsim              #+#    #+#             */
-/*   Updated: 2023/11/04 20:02:32 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/04 21:25:23 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*temp;
+
 	if (!lst || !del)
-		return;
+		return ;
 	while (*lst)
 	{
 		temp = *lst;

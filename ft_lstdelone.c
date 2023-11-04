@@ -6,7 +6,7 @@
 /*   By: hsim <hsim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 19:13:00 by hsim              #+#    #+#             */
-/*   Updated: 2023/11/04 20:01:27 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/04 21:25:37 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (!lst || !del)
-		return;
+		return ;
 	del(lst->content);
 	lst->next = NULL;
 	free(lst);
