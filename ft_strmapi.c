@@ -6,7 +6,7 @@
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 20:27:48 by hsim              #+#    #+#             */
-/*   Updated: 2023/10/27 20:28:05 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/04 18:56:49 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*tab;
 	int		i;
 
+	if (!s || !f)
+		return (NULL);
 	i = -1;
 	tab = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (tab != NULL)
