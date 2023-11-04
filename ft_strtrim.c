@@ -6,7 +6,7 @@
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 20:20:08 by hsim              #+#    #+#             */
-/*   Updated: 2023/11/04 17:29:51 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/04 18:21:40 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	a = 0;
 	x = 0;
+	if (!s1)
+		return (NULL);
 	while (*s1 && ft_strchr(set, s1[0]))
 		s1++;
 	x = ft_strlen(s1);
