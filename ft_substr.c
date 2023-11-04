@@ -6,7 +6,7 @@
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 20:16:59 by hsim              #+#    #+#             */
-/*   Updated: 2023/11/03 21:51:09 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/04 18:18:25 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	i;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	tab = (char *)malloc((len + 1) * sizeof(char));
 	if (tab == NULL)
 		return (NULL);
