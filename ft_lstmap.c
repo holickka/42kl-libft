@@ -6,7 +6,7 @@
 /*   By: hsim <hsim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 19:13:05 by hsim              #+#    #+#             */
-/*   Updated: 2023/11/04 19:18:35 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/04 21:06:48 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,39 +16,37 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*temp;
 	t_list	*newlst;
-	t_list	*delst;
 
-	if (!lst || !f)
+	if (!lst || !f || !del)
 		return (NULL);
 	temp = ft_lstnew(f(lst->content));
 	if (!temp)
 		return (NULL);
 	newlst = temp;
+	lst = lst->next;
 	while (lst)
 	{
 		temp->next = ft_lstnew(f(lst->content));
 		if (!temp->next)
 		{
-			while (newlst)
-			{
-				delst = newlst;
-				del(newlst->content);
-				newlst = newlst->next;
-				free(delst);
-			}
+			ft_lstclear(&newlst, del);
 			return (NULL);
-		}	
+		}
 		temp = temp->next;
 		lst = lst->next;
 	}
 	return (newlst);
 }
 /*
+|notes|
+by ft_lstnew the list->next is NULL by default
+so dont need to temp->next = NULL it
+*/
+/*
 #include <string.h>
 #include <stdio.h>
-void	ft_del(void *mylst);
 t_list	*ft_lstnew(void *content);
-
+void	ft_del(void *mylst)
 {
 	free(mylst);
 }
