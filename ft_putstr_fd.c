@@ -6,7 +6,7 @@
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 20:31:53 by hsim              #+#    #+#             */
-/*   Updated: 2023/10/27 20:31:55 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/04 18:58:32 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	if (!s)
+		return;
 	write(fd, s, ft_strlen(s));
 }
