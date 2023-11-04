@@ -6,7 +6,7 @@
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 20:17:40 by hsim              #+#    #+#             */
-/*   Updated: 2023/10/27 20:18:27 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/04 14:40:39 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*tab;
 
 	i = 0;
-	tab = (char *)malloc(sizeof(s1) - sizeof(char) + sizeof(s2));
+	tab = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (tab == NULL)
 		return (NULL);
 	while (*s1)
 		tab[i++] = *s1++;
 	while (*s2)
 		tab[i++] = *s2++;
+	tab[i] = '\0';
 	return (tab);
 }
 /*
