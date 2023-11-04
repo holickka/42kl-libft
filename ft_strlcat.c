@@ -6,7 +6,7 @@
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 17:12:45 by hsim              #+#    #+#             */
-/*   Updated: 2023/11/04 14:21:35 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/04 17:55:47 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n)
 	size_t	destlen;
 	char	*oridest;
 
+	if (!dest || !src)
+		return (0);
 	destlen = ft_strlen(dest);
 	oridest = dest;
 	i = 0;
