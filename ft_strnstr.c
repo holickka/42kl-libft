@@ -6,7 +6,7 @@
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 17:40:36 by hsim              #+#    #+#             */
-/*   Updated: 2023/10/27 17:41:20 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/04 18:01:19 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	size_t	x;
 
 	i = 0;
+	if (!str)
+		return (0);
 	if (!*to_find)
 		return ((char *)str);
 	while (str[i] && i < len)
@@ -41,7 +43,7 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 
 int	main()
 {
-	printf("%s\n", ft_strnstr("abbbbbbbd+as", "bd+as", 9));
+	printf("%s\n", ft_strnstr(NULL, NULL, 9));
 }
 */
 /*
