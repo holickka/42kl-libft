@@ -6,7 +6,7 @@
 /*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:36:29 by hsim              #+#    #+#             */
-/*   Updated: 2023/11/04 17:41:51 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/04 17:43:21 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ char	*ft_strdup(const char *src)
 		dest[i] = '\0';
 		return (dest);
 	}
+	return (NULL);
 }
 /*
 #include <stdio.h>
