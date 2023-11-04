@@ -11,18 +11,26 @@ SOURCES = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c\
 			ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c\
 			ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
+BONUS = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c \
+		ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c \
+
 OBJECTS = $(SOURCES:%.c=%.o)
+
+OBJECTS_BONUS = $(BONUS:%.c=%.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	ar -rcs $(NAME) $(OBJECTS)
 
+bonus: $(OBJECTS_BONUS)
+	ar -rcs $(NAME) $(OBJECTS_BONUS)
+
 %.o: %.c
 	$(COMPILE) $(FLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJECTS)
+	rm -f $(OBJECTS) $(OBJECTS_BONUS)
 
 fclean: clean
 	rm -f $(NAME)
