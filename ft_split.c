@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsim <hsim@student.42kl.edu.my>            +#+  +:+       +#+        */
+/*   By: hsim <hsim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 20:20:23 by hsim              #+#    #+#             */
-/*   Updated: 2023/10/27 20:20:36 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/04 18:55:11 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,25 +47,25 @@ char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		x;
-	int		setcount;
-	char	*str;
 	char	**tab;
 
+	if (!s)
+		return (NULL);
+	while (*s && s[0] == c)
+		s++;
+	tab = (char **)malloc((countstr(s, c) + 1) * sizeof(char *));
+	if (!tab)
+		return (NULL);
 	x = 0;
-	str = (char *)s;
-	while (*str && str[0] == c)
-		str++;
-	setcount = countstr(str, c);
-	tab = (char **)malloc((setcount + 1) * sizeof(char *));
-	while (x < setcount)
+	while (countstr(s, c) > 0)
 	{
-		tab[x] = (char *)malloc((str_sep(str, c) + 1) * sizeof(char));
+		tab[x] = (char *)malloc((str_sep(s, c) + 1) * sizeof(char));
 		i = 0;
-		while (*str && *str != c)
-			tab[x][i++] = *str++;
+		while (*s && *s != c)
+			tab[x][i++] = *s++;
 		tab[x][i] = '\0';
-		while (*str == c)
-			str++;
+		while (*s == c)
+			s++;
 		x++;
 	}
 	tab[x] = NULL;
