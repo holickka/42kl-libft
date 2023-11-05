@@ -22,6 +22,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	tempdest = (unsigned char *)dest;
 	tempsrc = (unsigned char *)src;
 	i = 0;
+	if (n == 0)
+		return (tempdest);
 	if (!dest || !src)
 		return (NULL);
 	while (i < n)
@@ -29,7 +31,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		tempdest[i] = tempsrc[i];
 		i++;
 	}
-	return (dest);
+	return (tempdest);
 }
 /*
 #include <stdio.h>
@@ -40,7 +42,7 @@ int	main()
 	char src[] = "whae";
 	int	n;
 
-	n = 3;
+	n = 0;
 	ft_memcpy(dest, src, n);
 	printf("%s\n", dest);
 }
