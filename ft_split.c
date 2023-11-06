@@ -6,21 +6,21 @@
 /*   By: hsim <hsim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 20:20:23 by hsim              #+#    #+#             */
-/*   Updated: 2023/11/04 18:55:11 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/06 19:45:18 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-int	countstr(char const *s, char c)
+static int	countstr(char const *s, char c)
 {
 	int	count;
 	int	i;
 
 	i = 0;
 	count = 0;
-	if (!s[i])
+	if (!s)
 		return (0);
 	while (s[i])
 	{
@@ -28,12 +28,12 @@ int	countstr(char const *s, char c)
 			count++;
 		i++;
 	}
-	if (s[i - 1] != c)
+	if (*s && s[i - 1] != c)
 		count++;
 	return (count);
 }
 
-int	str_sep(char const *s, char c)
+static int	str_sep(char const *s, char c)
 {
 	int	i;
 
@@ -64,7 +64,7 @@ char	**ft_split(char const *s, char c)
 		while (*s && *s != c)
 			tab[x][i++] = *s++;
 		tab[x][i] = '\0';
-		while (*s == c)
+		while (*s && *s == c)
 			s++;
 		x++;
 	}
@@ -80,7 +80,7 @@ int	main()
 	
 	i = 0;
 	result = ft_split("++++sasw++saww+sawaawa++++ ", '+'); 
-	while (i < 5)
+	while (i < 4)
 		printf("%s\n", result[i++]);
 }
 */
