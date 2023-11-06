@@ -21,15 +21,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (NULL);
+	if (start > ft_strlen(s))
+		len = 0;
+	else if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
 	tab = (char *)malloc((len + 1) * sizeof(char));
-	if (tab == NULL)
+	if (!tab)
 		return (NULL);
-	if (start <= ft_strlen(s))
-	{
-		while (i < len && s[start])
-			tab[i++] = ((char *)s)[start++];
-	}
-	tab[i] = '\0';
+	ft_bzero(tab, (len + 1));
+	while (i < len)
+		tab[i++] = s[start++];
 	return (tab);
 }
 /*
