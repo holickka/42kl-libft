@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-int	numlen(int n)
+static int	numlen(int n)
 {
 	int		count;
 	long	nlong;
@@ -33,7 +33,7 @@ int	numlen(int n)
 	return (count + 1);
 }
 
-void	ft_neg(long *n, char *tab)
+static void	ft_neg(long *n, char *tab)
 {
 	if (*n < 0)
 	{
