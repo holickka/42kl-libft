@@ -16,20 +16,18 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*temp;
 
-	if (!*lst)
+	if (lst && new)
 	{
-		*lst = new;
-		new->next = NULL;
+		if (!*lst)
+			*lst = new;
+		else
+		{
+			temp = *lst;
+			while (temp->next)
+				temp = temp->next;
+			temp->next = new;
+		}
 	}
-	else
-	{
-		temp = *lst;
-		while (temp->next)
-			temp = temp->next;
-		temp->next = new;
-		new->next = NULL;
-	}
-}
 /*
 #include <stdio.h>
 int	ft_lstsize(t_list *lst);
