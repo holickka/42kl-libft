@@ -6,7 +6,7 @@
 /*   By: hsim <hsim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 19:07:36 by hsim              #+#    #+#             */
-/*   Updated: 2023/11/04 19:32:15 by hsim             ###   ########.fr       */
+/*   Updated: 2023/11/07 14:46:27 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 			temp->next = new;
 		}
 	}
+}
 /*
 #include <stdio.h>
 int	ft_lstsize(t_list *lst);
