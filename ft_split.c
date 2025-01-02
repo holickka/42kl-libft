@@ -33,7 +33,7 @@ static int	countstr(char const *s, char c)
 	return (count);
 }
 
-static int	str_sep(char const *s, char c)
+static int	countword(char const *s, char c)
 {
 	int	i;
 
@@ -43,6 +43,9 @@ static int	str_sep(char const *s, char c)
 	return (i);
 }
 
+/*
+ * skips if the split char is in front
+ */
 char	**ft_split(char const *s, char c)
 {
 	int		i;
@@ -59,7 +62,7 @@ char	**ft_split(char const *s, char c)
 	x = 0;
 	while (countstr(s, c) > 0)
 	{
-		tab[x] = (char *)malloc((str_sep(s, c) + 1) * sizeof(char));
+		tab[x] = (char *)malloc((countword(s, c) + 1) * sizeof(char));
 		i = 0;
 		while (*s && *s != c)
 			tab[x][i++] = *s++;
