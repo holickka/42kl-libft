@@ -6,7 +6,7 @@
 /*   By: hsim <hsim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 21:07:58 by hsim              #+#    #+#             */
-/*   Updated: 2025/01/03 13:26:16 by hsim             ###   ########.fr       */
+/*   Updated: 2025/01/04 22:23:02 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ void			ft_putnbr_fd(int n, int fd);
 
 long			ft_atol(const char *str);
 int				ft_basetoi(char *base, char *s, int n);
+void			ft_itobase(char *base_return, int nbr, int *res);
+int				ft_convert_base(char *str, char *base_return);
 int				ft_perror(char *error_text, int return_value);
 int				ft_perror_fd(char *s, int fd, int value);
 
