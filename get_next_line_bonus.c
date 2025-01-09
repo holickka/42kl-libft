@@ -6,7 +6,7 @@
 /*   By: hsim <hsim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:24:53 by hsim              #+#    #+#             */
-/*   Updated: 2023/12/21 20:41:04 by hsim             ###   ########.fr       */
+/*   Updated: 2025/01/09 13:44:49 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,10 +81,14 @@ static void	loadleftover(char *buffer, char **leftover)
 	free(*leftover);
 	*leftover = NULL;
 }
-
+/*
+ * Gets the next line frm multiple files,
+ * leftover size can be defined by OPEN_MAX in limits.h(mac)
+ * or 1024 (using ulimit -n to check) in linux
+ */
 char	*get_next_line(int fd)
 {
-	static char	*leftover[OPEN_MAX];
+	static char	*leftover[1024];
 	char		*buffer;
 	char		*result;
 	t_list		*tab;
