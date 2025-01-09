@@ -6,7 +6,7 @@
 /*   By: hsim <hsim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:24:53 by hsim              #+#    #+#             */
-/*   Updated: 2025/01/09 13:44:49 by hsim             ###   ########.fr       */
+/*   Updated: 2025/01/09 15:47:55 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ static void	loadleftover(char *buffer, char **leftover)
 	free(*leftover);
 	*leftover = NULL;
 }
+
 /*
  * Gets the next line frm multiple files,
  * leftover size can be defined by OPEN_MAX in limits.h(mac)
