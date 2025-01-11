@@ -6,7 +6,7 @@
 /*   By: hsim <hsim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 22:10:24 by hsim              #+#    #+#             */
-/*   Updated: 2025/01/04 22:27:05 by hsim             ###   ########.fr       */
+/*   Updated: 2025/01/09 15:48:32 by hsim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_itobase(char *base_return, int nbr, int *res)
 		if (n < 0)
 		{
 			n *= -1;
-			if (baselen == 10 || baselen == 2) // if its base10
+			if (baselen == 10 || baselen == 2)
 				ft_putchar_fd('-', 1);
 		}
 		if (n >= baselen)
